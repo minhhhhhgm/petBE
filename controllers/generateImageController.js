@@ -1,4 +1,3 @@
-require('dotenv').config(); // should be at the very top!!!
 const Replicate  = require("replicate");
 const replicate = new Replicate();
 

@@ -14,12 +14,8 @@ const userSchema = new Schema(
       type: String,
       allowNull: true,
     },
-    passWord: {
+    password: {
       type: String,
-    },
-    role: {
-      type: String,
-      default: "user",
     },
     email: {
       type: String,
@@ -33,18 +29,12 @@ const userSchema = new Schema(
       require: false,
       partialFilterExpression: true,
     },
-    userName: {
-      type: String,
-      minLength: 5,
-      maxLength: 30,
-      trim: true,
-      require: true,
-    },
     avatar: {
       type: String,
     },
     devicesToken: [{ type: String }],
-    follows: [{ type: Schema.Types.ObjectId, ref: "Follow" }],
+    followers: [{ type: Schema.Types.ObjectId, ref: 'User' }], 
+    following: [{ type: Schema.Types.ObjectId, ref: 'User' }]
   },
   {
     collection: "users",
