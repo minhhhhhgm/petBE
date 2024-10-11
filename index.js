@@ -30,7 +30,7 @@ app.use('/noti', notiRoute)
 
 
 socketHandler(io);
-
+app.locals.io = io;
 server.listen(4000, () => {
     console.log("The Server is Running on Port 4000");
 });

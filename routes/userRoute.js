@@ -6,7 +6,8 @@ const {
   updateUser,
   deleteUser,
   login,
-  followUser
+  followUser,
+  deleteAllFollowRelations
 } = require('../controllers/userController');
 
 const router = express.Router();
@@ -14,6 +15,8 @@ const router = express.Router();
 router.post('/createUsers', createUser);
 
 router.post('/users/follow', followUser);
+
+router.post('/users/deleteFollow', deleteAllFollowRelations);
 
 
 router.post('/login', login);
